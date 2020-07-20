@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if not stock_data %}
+<h1 class="cover-heading">請在上方輸入股票代碼查詢</h1>
+{% else %}
+<h1 class="cover-heading">股票資訊</h1>
+<div class="container" id="chart1"></div>
+{% endif %}
+{% endblock %}
+
+{% block script %}
+{{ super() }}
+<script>
+    var chart = Highcharts.chart('chart1', {{ stock_data|safe }});
+</script>
+{% endblock %}

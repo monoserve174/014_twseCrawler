@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title> twseCrawler </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename='/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='/css/Custom.css')}}" rel="stylesheet">
+
+
+</head>
+<body class="text-center">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand"><a href="{{url_for('index')}}">twseCrawler</a></h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <form method="post" class="form-inline justify-content-center">
+                    <input class="form-control" name="stock_id" type="search" placeholder="股票代碼" aria-label="股票代碼">
+                    &ensp;
+                    <button class="btn btn-secondary" type="submit">搜尋</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+
+    <main role="main" class="inner cover">
+        {% block body %}
+        {% endblock %}
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by Kevin.</p>
+        </div>
+    </footer>
+</div>
+{% block script %}
+<script src="{{url_for('static', filename='/js/highcharts.js')}}"></script>
+<script src="{{url_for('static', filename='/js/highstock.js')}}"></script>
+{% endblock %}
+</body>
+</html>
